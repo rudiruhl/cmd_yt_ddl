@@ -1,32 +1,42 @@
 from pytube import YouTube
+from colorama import init, Fore, Back, Style
 import os
 import ffmpeg
 
+init()
+
+
 def ddl_app ():
-    print("Welcome to the Pytube Downloader!")
+    print(Fore.RED + Style.BRIGHT + "Welcome to the Pytube Downloader!" + Style.RESET_ALL)
     url = input("URL: ")
 
     yt = YouTube(url)
 
-    print("Download Video")
+    print(Fore.YELLOW + Style.BRIGHT + "Grabbing Video Itags..." + Style.RESET_ALL)
 
     for i in list(yt.streams):
         print(i)
 
     itag = input("Itag of Video: ")
+    print(Fore.MAGENTA + Style.BRIGHT + "Downloading Video..." + Style.RESET_ALL)
     video = yt.streams.get_by_itag(int(itag)).download()
     os.rename(video,"video_1080.mp4")
 
-    print("Download Audio")
+    print(Fore.GREEN + Style.BRIGHT + "****** Video download completed! ******" + Style.RESET_ALL)
+
+    print(Fore.YELLOW + Style.BRIGHT + "Grabbing Audio Itags..." + Style.RESET_ALL)
 
     for i in list(yt.streams):
         print(i)
 
     itag = input("Itag of Audio: ")
+    print(Fore.MAGENTA + Style.BRIGHT + "Downloading Audio..." + Style.RESET_ALL)
     audio = yt.streams.get_by_itag(int(itag)).download()
     os.rename(audio,"audio.mp4")
 
-    print("Merging Video + Audio")
+    print(Fore.GREEN + Style.BRIGHT + "****** Audio download completed! ******" + Style.RESET_ALL)
+
+    print(Fore.MAGENTA + Style.BRIGHT + "Merging Video and Audio files..." + Style.RESET_ALL)
 
     name = input("Name of Video File: ")
     filename = "%s.mp4" % name
@@ -35,8 +45,15 @@ def ddl_app ():
     audio_stream = ffmpeg.input('audio.mp4')
     ffmpeg.output(audio_stream, video_stream, filename).run()
 
+    print(Fore.GREEN + Style.BRIGHT + "****** Merging Video and Audio files completed! ******" + Style.RESET_ALL)
+
+    print(Fore.MAGENTA + Style.BRIGHT + "Removing files..." + Style.RESET_ALL)
+
     os.remove("video_1080.mp4")
     os.remove("audio.mp4")
-    print("Files Removed!")
+
+    print(Fore.GREEN + Style.BRIGHT + "****** Files remove! ******" + Style.RESET_ALL)
+
+    print(Fore.GREEN + Style.BRIGHT + "****** Job done! Have fun with your video! ******" + Style.RESET_ALL)
 
 ddl_app()
