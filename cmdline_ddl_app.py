@@ -8,7 +8,7 @@ init()
 
 def ddl_app ():
     print(Fore.RED + Style.BRIGHT + "Welcome to the Pytube Downloader!" + Style.RESET_ALL)
-    url = input("URL: ")
+    url = input(Fore.YELLOW + Back.BLACK + Style.BRIGHT + "Input your URL: " + Style.RESET_ALL)
 
     yt = YouTube(url)
 
@@ -17,7 +17,8 @@ def ddl_app ():
     for i in list(yt.streams):
         print(i)
 
-    itag = input("Itag of Video: ")
+    itag = input(Fore.YELLOW + Back.BLACK + Style.BRIGHT + "Input Itag of Video: " + Style.RESET_ALL)
+
     print(Fore.MAGENTA + Style.BRIGHT + "Downloading Video..." + Style.RESET_ALL)
     video = yt.streams.get_by_itag(int(itag)).download()
     os.rename(video,"video_1080.mp4")
@@ -29,7 +30,8 @@ def ddl_app ():
     for i in list(yt.streams):
         print(i)
 
-    itag = input("Itag of Audio: ")
+    itag = input(Fore.YELLOW + Back.BLACK + Style.BRIGHT + "Input Itag of Audio: " + Style.RESET_ALL)
+
     print(Fore.MAGENTA + Style.BRIGHT + "Downloading Audio..." + Style.RESET_ALL)
     audio = yt.streams.get_by_itag(int(itag)).download()
     os.rename(audio,"audio.mp4")
@@ -38,7 +40,8 @@ def ddl_app ():
 
     print(Fore.MAGENTA + Style.BRIGHT + "Merging Video and Audio files..." + Style.RESET_ALL)
 
-    name = input("Name of Video File: ")
+    name = input(Fore.YELLOW + Back.BLACK + Style.BRIGHT + "Filename of Output File: " + Style.RESET_ALL)
+
     filename = "%s.mp4" % name
 
     video_stream = ffmpeg.input('video_1080.mp4')
