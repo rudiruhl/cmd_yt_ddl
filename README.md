@@ -19,8 +19,6 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
