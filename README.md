@@ -1,4 +1,4 @@
-<h3 align="center">Command Line Youtube Downloader</h3>
+<h3 align="center">Command Line YT Downloader</h3>
 
 <div align="center">
 
@@ -10,7 +10,7 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Tool for downloading YT-Videos.
     <br> 
 </p>
 
@@ -20,7 +20,6 @@
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
-- [Built Using](#built_using)
 - [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
