@@ -27,7 +27,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+I needed a tool to download highlight videos from sports, the result is this. 🥰
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -35,10 +35,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+To use this script, you need to install [pytube](https://github.com/pytube/pytube) and [colorama](https://github.com/tartley/colorama).
 
 ```
-Give examples
+pip install pytube
+pip install colorama
+
 ```
 
 ### Installing
